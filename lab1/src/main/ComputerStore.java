@@ -8,11 +8,11 @@ import computer.Computer;
 import factory.Factory;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ComputerStore {
-    private static Computer computer1;
-    private static Computer computer2;
-    private static Computer computer3;
+    private static List<Computer> computers = new ArrayList<>();
 
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         init();
@@ -44,32 +44,32 @@ public class ComputerStore {
         Memory memory2 = Factory.getMemoryInstance("Kingston", "memory2", 800, 8);
         Memory memory3 = Factory.getMemoryInstance("Samsung", "memory3", 900, 8);
 
-        computer1 = Factory.getComputerInstance("computer1", cpu1, disk1, mainboard1, memory1);
-        computer2 = Factory.getComputerInstance("computer2", cpu2, disk2, mainboard2, memory2);
-        computer3 = Factory.getComputerInstance("computer3", cpu3, disk3, mainboard3, memory3);
+        computers.add(Factory.getComputerInstance("computer1", cpu1, disk1, mainboard1, memory1));
+        computers.add(Factory.getComputerInstance("computer2", cpu2, disk2, mainboard2, memory2));
+        computers.add(Factory.getComputerInstance("computer3", cpu3, disk3, mainboard3, memory3));
     }
 
     public static void showGoods() {
-        System.out.format("%-15s |%-15s |%-15s |%-15s |%-15s |%-15s\n", "Computer", "CPU", "Memory", "Disk", "Mainboard","Price");
+        System.out.format("%-15s |%-15s |%-15s |%-15s |%-15s |%-15s\n", "Computer", "CPU", "Memory", "Disk", "Mainboard", "Price");
         for (int i = 0; i < 17 * 5; i++) {
             System.out.print("-");
         }
         System.out.println();
-        System.out.format("%-15s |%-15s |%-15s |%-15s |%-15s |%-15f\n", computer1.getName(), computer1.getCPUName(), computer1.getMemoryName(), computer1.getDiskName(), computer1.getMainboardName(),computer1.getPrice());
-        System.out.format("%-15s |%-15s |%-15s |%-15s |%-15s |%-15f\n", computer2.getName(), computer2.getCPUName(), computer2.getMemoryName(), computer2.getDiskName(), computer2.getMainboardName(),computer2.getPrice());
-        System.out.format("%-15s |%-15s |%-15s |%-15s |%-15s |%-15f\n", computer3.getName(), computer3.getCPUName(), computer3.getMemoryName(), computer3.getDiskName(), computer3.getMainboardName(),computer3.getPrice());
+        for (Computer com : computers) {
+            System.out.format("%-15s |%-15s |%-15s |%-15s |%-15s |%-15f\n", com.getName(), com.getCPUName(), com.getMemoryName(), com.getDiskName(), com.getMainboardName(), com.getPrice());
+        }
     }
-    public static void showDetail(){
-        System.out.println(computer1);
-        System.out.println(computer2);
-        System.out.println(computer3);
+
+    public static void showDetail() {
+        for (Computer com : computers) {
+            System.out.println(com);
+        }
     }
-    public static void showWork(){
-        System.out.println("=========computer1 work=========");
-        computer1.work();
-        System.out.println("=========computer2 work=========");
-        computer2.work();
-        System.out.println("=========computer3 work=========");
-        computer3.work();
+
+    public static void showWork() {
+        for (int i = 0; i < computers.size(); i++) {
+            System.out.println("=========computer"+i+" work=========");
+            computers.get(i).work();
+        }
     }
 }
