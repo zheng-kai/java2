@@ -11,9 +11,9 @@ public abstract class Disk extends Goods implements Component {
     @Override
     public String toString() {
         return "Disk{" +
-                "volume=" + volume +
+                "volume=" + volume +" GB"+
                 ", name='" + name + '\'' +
-                ", price=" + price +
+                ", price=" + price + "RMB"+
                 '}';
     }
 

@@ -11,9 +11,9 @@ public abstract class Mainboard extends Goods implements Component {
     @Override
     public String toString() {
         return "Mainboard{" +
-                "speed=" + speed +
+                "speed=" + speed +" GHz"+
                 ", name='" + name + '\'' +
-                ", price=" + price +
+                ", price=" + price + " RMB" +
                 '}';
     }
 

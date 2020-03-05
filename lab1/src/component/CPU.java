@@ -12,9 +12,9 @@ public abstract class CPU extends Goods implements Component {
     @Override
     public String toString() {
         return "CPU{" +
-                "coreNum=" + coreNum +
+                "coreNum=" + coreNum + " cores"+
                 ", name='" + name + '\'' +
-                ", price=" + price +
+                ", price=" + price + " RMB"+
                 '}';
     }
 

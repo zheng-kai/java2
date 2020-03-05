@@ -12,9 +12,9 @@ public abstract class Memory extends Goods implements Component {
     @Override
     public String toString() {
         return "Memory{" +
-                "volume=" + volume +
+                "volume=" + volume +" GB"+
                 ", name='" + name + '\'' +
-                ", price=" + price +
+                ", price=" + price + " RMB" +
                 '}';
     }
 
