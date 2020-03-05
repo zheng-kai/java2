@@ -1,6 +1,6 @@
 package component;
 
-public abstract class Mainboard extends Good implements Component {
+public abstract class Mainboard extends Goods implements Component {
     protected float speed;
 
     public Mainboard(String name, float price, float speed) {

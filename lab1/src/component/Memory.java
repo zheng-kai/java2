@@ -1,7 +1,7 @@
 package component;
 
 
-public abstract class Memory extends Good implements Component {
+public abstract class Memory extends Goods implements Component {
     protected int volume;
 
     public Memory(String name, float price, int volume) {

@@ -1,10 +1,10 @@
 package component;
 
-public abstract class Good {
+public abstract class Goods {
     protected String name;
     protected float price;
 
-    public Good(String name, float price) {
+    public Goods(String name, float price) {
         this.name = name;
         if (price <= 0) {
             this.price = 0;

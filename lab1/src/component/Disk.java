@@ -1,6 +1,6 @@
 package component;
 
-public abstract class Disk extends Good implements Component {
+public abstract class Disk extends Goods implements Component {
     protected int volume;
 
     public Disk(String name, float price, int volume) {

@@ -1,7 +1,7 @@
 package component;
 
 
-public abstract class CPU extends Good implements Component {
+public abstract class CPU extends Goods implements Component {
     protected int coreNum;
 
     public CPU(String name, float price, int coreNum) {
