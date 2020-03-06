@@ -28,6 +28,22 @@ public class Computer {
         return memory.getName();
     }
 
+    public void setCpu(CPU cpu) {
+        this.cpu = cpu;
+    }
+
+    public void setDisk(Disk disk) {
+        this.disk = disk;
+    }
+
+    public void setMainboard(Mainboard mainboard) {
+        this.mainboard = mainboard;
+    }
+
+    public void setMemory(Memory memory) {
+        this.memory = memory;
+    }
+
     public void work(){
         cpu.work();
         disk.work();
