@@ -19,12 +19,7 @@ public class ComputerStore {
         showGoods();
         showDetail();
         showWork();
-//        System.out.println(computer1);
-//        System.out.println(computer2.getPrice());
-//        System.out.println(computer3.getName());
-//        computer1.work();
-//        computer2.work();
-//        computer3.work();
+
     }
 
     private static void init() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
