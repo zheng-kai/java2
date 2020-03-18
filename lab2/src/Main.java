@@ -24,15 +24,24 @@ public class Main {
                     }
                 }
             }
+            in.close();
         }catch (IOException e){
             e.printStackTrace();
             System.exit(-1);
         }
-
         List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
         list.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
-        for (Map.Entry<String, Integer> entry : list) {
-            System.out.println(entry.getKey() + " " + entry.getValue());
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("output.txt"))));
+            for (Map.Entry<String, Integer> entry : list) {
+                writer.write(entry.getKey() + " " + entry.getValue());
+                writer.newLine();
+            }
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
