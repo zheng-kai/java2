@@ -1,14 +1,21 @@
+import java.awt.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         BufferedReader in =
                 null;
         String fileName = "了不起的盖茨比英文.txt";
+        File inputFile = new File(System.getProperty("user.dir")+"/"+fileName);
+        if (!inputFile.canRead()){
+            System.err.println("该文件不可读");
+            System.exit(-1);
+        }
         try {
-            in = new BufferedReader(new InputStreamReader(new FileInputStream(new File(System.getProperty("user.dir")+"/"+fileName)), StandardCharsets.UTF_8));
+            in = new BufferedReader(new InputStreamReader(new FileInputStream(inputFile), StandardCharsets.UTF_8));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.exit(-1);
