@@ -2,11 +2,11 @@ import matrix.Matrix;
 import matrix.MatrixGenerator;
 
 public class Main {
-    private static final int THREAD_NUM = 2;
+    private static final int THREAD_NUM = 10;
 
     public static void main(String[] args) throws Exception {
-        Matrix matrix1 = MatrixGenerator.generate(1000, 1000);
-        Matrix matrix2 = MatrixGenerator.generate(1000, 1000);
+        Matrix matrix1 = MatrixGenerator.generate(500, 500);
+        Matrix matrix2 = MatrixGenerator.generate(500, 500);
 
         long threadStart = System.currentTimeMillis();
         Matrix matrix3 = matrix1.multiply(matrix2, THREAD_NUM);
